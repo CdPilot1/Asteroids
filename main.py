@@ -10,6 +10,8 @@ if __name__ == "__main__":
     pygame.init()
     from constants import *
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    Clock = pygame.time.Clock()
+    dt = 0
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -17,3 +19,4 @@ if __name__ == "__main__":
                 exit()
         screen.fill("black")
         pygame.display.flip()
+        dt = Clock.tick(60) / 1000
