@@ -33,5 +33,10 @@ if __name__ == "__main__":
         updatebles.update(dt)
         for sprite in drawables:
             sprite.draw(screen)
+        for asteroid in asteroids:
+            if asteroid.collide(player):
+                print("Game Over!")
+                pygame.quit()
+                exit()
         pygame.display.flip()
         dt = Clock.tick(60) / 1000
