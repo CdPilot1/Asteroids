@@ -18,9 +18,11 @@ if __name__ == "__main__":
     updatebles = pygame.sprite.Group()
     drawables = pygame.sprite.Group()
     asteroids = pygame.sprite.Group()
+    shots = pygame.sprite.Group()
     Player.containers = updatebles, drawables
     Asteroid.containers = updatebles, drawables, asteroids
     AsteroidField.containers = updatebles
+    Shot.containers = updatebles, drawables, shots
     asteroid_field = AsteroidField()
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
     
