@@ -40,5 +40,10 @@ if __name__ == "__main__":
                 print("Game Over!")
                 pygame.quit()
                 exit()
+        for asteroid in asteroids:
+            for shot in shots:
+                if asteroid.collide(shot):
+                    asteroid.kill()
+                    shot.kill()
         pygame.display.flip()
         dt = Clock.tick(60) / 1000
